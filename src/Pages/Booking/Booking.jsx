@@ -10,7 +10,7 @@ export default function Booking() {
     const { users } = useContext(AuthContext)
     const [bookings, setBooking] = useState([])
     const AxiosSecure = UseAxiosSecure();
-    // const url = `http://localhost:5000/booking?email=${users?.email}`
+    // const url = `https://car-doctor-server-chi-eight.vercel.app/booking?email=${users?.email}`
     const url = `/booking?email=${users?.email}`
 
     useEffect(() => {
@@ -38,7 +38,7 @@ export default function Booking() {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/booking/${id}`, {
+                fetch(`https://car-doctor-server-chi-eight.vercel.app/booking/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -61,7 +61,7 @@ export default function Booking() {
 
 
     const hendelbookingconfirm = id => {
-        fetch(`http://localhost:5000/booking/${id}`, {
+        fetch(`https://car-doctor-server-chi-eight.vercel.app/booking/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

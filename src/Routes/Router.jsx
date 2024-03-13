@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: '/chackout/:id',
         element: <Private><Chackout></Chackout></Private>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://car-doctor-server-chi-eight.vercel.app/services/${params.id}`)
       },
       {
         path: '/booking',

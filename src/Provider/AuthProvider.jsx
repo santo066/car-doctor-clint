@@ -32,13 +32,13 @@ export default function AuthProvider({ children }) {
             setloading(false)
             // jwt
             if (currentuser) {
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://car-doctor-server-chi-eight.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('token responsed', res.data)
                     })
             }
             else {
-                axios.post('http://localhost:5000/logout', loggedUser, {
+                axios.post('https://car-doctor-server-chi-eight.vercel.app/logout', loggedUser, {
                     withCredentials: true
                 })
                     .then(res => {
